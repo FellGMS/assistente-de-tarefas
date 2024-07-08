@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>fgg_Lista de Tarefas</title>
+</head>
+<body>
+    <div class="fgg-container">
+        <header>
+            <h1>Lista de Tarefas</h1>
+        </header>
+        <main>
+            <button id="add-task-btn" class="add-task-btn">Adicionar Nova Tarefa</button>
+            <ul id="fgg-task-list"></ul>
+        </main>
+        <footer>
+            <p>Desenvolvido por Fellipe Goulart Gomes</p>
+            <p><a href="https://github.com/FellGMS" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/fellipeggomes" target="_blank">LinkedIn</a></p>
+        </footer>
+    </div>
+
+    <!-- Modal para Adicionar/Editar Tarefa -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Adicionar Nova Tarefa</h2>
+            <form id="fgg-task-form">
+                <input type="text" id="fgg-task-input" placeholder="Título">
+                <textarea id="fgg-task-desc" placeholder="Descrição"></textarea>
+                <input type="date" id="fgg-task-date">
+                <input type="time" id="fgg-task-time">
+                <label>
+                    <input type="checkbox" id="fgg-recurring-alarm"> Lembrete recorrente
+                </label>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Detalhes da Tarefa -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Detalhes da Tarefa</h2>
+            <div class="detail-field"><strong>Título:</strong> <span id="modal-task-title"></span></div>
+            <div class="detail-field"><strong>Descrição:</strong> <span id="modal-task-desc"></span></div>
+            <div class="detail-field"><strong>Data:</strong> <span id="modal-task-date"></span></div>
+            <div class="detail-field"><strong>Hora:</strong> <span id="modal-task-time"></span></div>
+            <button id="edit-task">Editar Tarefa</button>
+            <button id="complete-task">Marcar como Realizada</button>
+        </div>
+    </div>
+
+    <audio id="fgg-alarm-sound" src="assets/alarm.mp3" preload="auto"></audio>
+    <audio id="fgg-bell-sound" src="assets/alarm.mp3" preload="auto"></audio>
+    <script src="app.js"></script>
+</body>
+</html>
